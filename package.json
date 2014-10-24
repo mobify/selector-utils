@@ -1,0 +1,25 @@
+{
+  "name": "adaptivejs-utils",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/mobify/adaptivejs-utils"
+  },
+  "version": "1.0.0",
+  "description": "Utility functions that can be selectively included in your Adaptive.js builds",
+  "devDependencies": {
+    "chai": "~1.9.0",
+    "grunt": "~0.4.x",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-contrib-uglify": "~0.1.1",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-jscs": "0.7.1",
+    "grunt-mocha-phantomjs": "~0.3.2",
+    "jshint": "2.5.0",
+    "mobify-code-style": "1.0.0",
+    "mocha": "~1.14.0"
+  },
+  "license": "MIT"
+}

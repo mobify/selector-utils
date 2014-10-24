@@ -1,0 +1,24 @@
+{
+  "name": "adaptivejs-utils",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mobify/adaptivejs-utils",
+  "authors": [
+    "Steve Calvert <scalvert@mobify.com>"
+  ],
+  "description": "Utility functions that can be selectively included in your Adaptive.js builds",
+  "keywords": [
+    "adaptivejs",
+    "adaptivejs-utils"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.15"
+  }
+}

@@ -1,4 +1,4 @@
-adaptivejs-utils
+Selector Utils
 ================
 
-Utility functions that can be selectively included in your Adaptive.js builds.
+Selector utility functions that can be selectively included in your Adaptive.js builds.

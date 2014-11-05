@@ -6,6 +6,6 @@
     }
 }(function($) {
     $.fn.removeStyle = function() {
-        return this.filter('[style]').removeAttr('style');
+        return this.removeAttr('style');
     };
 }));

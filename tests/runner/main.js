@@ -9,6 +9,7 @@ require(['config'], function() {
 
             var tests = [
                 '../../tests/unit/capitalizeTests.js',
+                '../../tests/unit/anyTests.js',
                 '../../tests/unit/removeStyleTests.js'
             ];
 

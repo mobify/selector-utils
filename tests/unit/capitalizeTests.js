@@ -36,5 +36,9 @@ define([
         it('ignores uppercase strings', function() {
             assert.equal($.capitalize('FOO BAR'), 'FOO BAR');
         });
+
+        it('forces lowercase on rest of words', function() {
+            assert.equal($.capitalize('superCALAfragalisTICexPIalidocious', true), 'Supercalafragalisticexpialidocious');
+        });
     });
 });

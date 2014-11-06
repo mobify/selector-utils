@@ -5,7 +5,11 @@
         factory(window.Zepto || window.jQuery);
     }
 }(function($) {
-    $.fn.removeStyle = function() {
-        return this.removeAttr('style');
-    };
+    $.extend($.fn, {
+        removeStyle: function() {
+            return this.each(function() {
+                return $(this).removeAttr('style');
+            });
+        }
+    });
 }));

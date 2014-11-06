@@ -12,11 +12,11 @@
      *
      * $.format('This string is using {0} syntax, with {1} replacements', 'positional', 'variable');
      *
-     * @param str
+     * @param format
      * @returns {*}
      */
-    $.format = function (str) {
-        if (!str) return '';
+    $.format = function (format) {
+        if (!format) return '';
 
         var args = Array.prototype.slice.call(arguments, 1);
 
@@ -27,14 +27,14 @@
         for (var i = 0, l = args.length; i < l; i++) {
             var re = new RegExp('\\{' + (i) + '\\}', 'gm');
 
-            if (i === 0 && !str.match(re)) {
+            if (i === 0 && !format.match(re)) {
                 throw 'Format placeholders must start at index 0. The supplied string does not contain a {0} placeholder';
             }
 
-            str = str.replace(re, args[i]);
+            format = format.replace(re, args[i]);
         }
 
-        return str;
+        return format;
     };
 }));
 

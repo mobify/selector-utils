@@ -12,6 +12,8 @@
      *
      * $.format('This string is using {0} syntax, with {1} replacements', 'positional', 'variable');
      *
+     * result: 'This string is using positional syntax, with variable replacements'
+     *
      * @param format
      * @returns {*}
      */

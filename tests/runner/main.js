@@ -8,7 +8,8 @@ require(['config'], function() {
         function(require, chai, mocha) {
 
             var tests = [
-                '../../tests/unit/capitalizeTests.js'
+                '../../tests/unit/capitalizeTests.js',
+                '../../tests/unit/removeStyleTests.js'
             ];
 
             require(tests, function() {

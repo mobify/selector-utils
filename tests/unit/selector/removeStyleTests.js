@@ -1,7 +1,7 @@
 define([
     'text!fixtures/items.html',
     '$',
-    'src/removeStyle'
+    'src/selector/removeStyle'
 ], function(fixture, $) {
     describe('Remove style', function() {
         describe('attributes with invalid input', function() {

@@ -1,6 +1,6 @@
 define([
     '$',
-    'src/capitalize'
+    'src/utils/capitalize'
 ], function($) {
     describe('Capitalize', function() {
         describe('with invalid input', function() {

@@ -1,6 +1,6 @@
 define([
     '$',
-    'src/format'
+    'src/utils/format'
 ], function($) {
     describe('Format', function() {
         describe('with no placeholders', function() {

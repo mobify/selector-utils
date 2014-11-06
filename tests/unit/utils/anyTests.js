@@ -1,6 +1,6 @@
 define([
     '$',
-    'src/any'
+    'src/utils/any'
 ], function($) {
     describe('Any', function() {
         describe('with invalid input', function() {

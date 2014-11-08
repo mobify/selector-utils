@@ -10,6 +10,24 @@
             return this.each(function() {
                 return $(this).removeAttr('style');
             });
+        },
+
+        /*
+         * Removes inline styles for all descendants and itself unless specified
+         * otherwise by skipSelf
+         */
+        removeStyles: function(skipSelf) {
+            return this.each(function() {
+                var $el = $(this);
+
+                if (!skipSelf) {
+                    $el.removeStyle();
+                }
+
+                $el.find('[style]').removeStyle();
+
+                return $el;
+            })
         }
     });
 }));

@@ -1,5 +1,5 @@
 {
-  "name": "adaptivejs-utils",
+  "name": "selector-utils",
   "version": "0.0.1",
   "homepage": "https://github.com/mobify/adaptivejs-utils",
   "authors": [
@@ -8,7 +8,7 @@
   "description": "Utility functions that can be selectively included in your Adaptive.js builds",
   "keywords": [
     "adaptivejs",
-    "adaptivejs-utils"
+    "selector-utils"
   ],
   "license": "MIT",
   "ignore": [

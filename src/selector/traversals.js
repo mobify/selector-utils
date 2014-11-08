@@ -7,7 +7,7 @@
 }(function($) {
     function _until($element, method, selector) {
         var $els = $();
-        var $el = $element.prev();
+        var $el = $element[method]();
 
         while ($el.length) {
             if (typeof selector === 'undefined' || $el.is(selector)) {

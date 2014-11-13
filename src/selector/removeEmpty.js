@@ -7,7 +7,7 @@
 }(function($) {
     $.extend($.fn, {
         removeEmpty: function() {
-            return this.each(function() {
+            return this.map(function() {
                 var $el = $(this);
 
                 if ($.trim($el.html().replace(/&nbsp;/g,'')).length) {

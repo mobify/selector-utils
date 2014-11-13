@@ -14,19 +14,10 @@
         outerHeight: function() {
             var $el = $(this);
             var totalHeight = $el.height();
-            var spacingProperties = [
-                'margin-top',
-                'margin-bottom',
-                'border-top',
-                'border-bottom'
-            ];
+            var props = $el.css(['margin-top', 'margin-bottom', 'border-top', 'border-bottom']);
 
-            for (var i = 0, l = spacingProperties.length; i < l; i++) {
-                var propertyValue = parseInt($el.css(spacingProperties[i]));
-
-                if (!isNaN(propertyValue)) {
-                    totalHeight += propertyValue;
-                }
+            for (var prop in props) {
+                props.hasOwnProperty(prop) && (totalHeight += parseInt(props[prop]));
             }
 
             return totalHeight;

@@ -10,7 +10,7 @@
             return this.each(function() {
                 var $el = $(this);
 
-                if ($.trim($el.html().replace('&nbsp;','')).length === 0) {
+                if ($.trim($el.html().replace(/&nbsp;/g,'')).length) {
                     $el.remove();
                 } else {
                     return $el;

@@ -5,7 +5,7 @@
         factory(window.Zepto || window.jQuery);
     }
 }(function($) {
-    function _until($element, method, selector) {
+    function _all($element, method, selector) {
         var $els = $();
         var $el = $element[method]();
 
@@ -23,21 +23,21 @@
 
     $.extend($.fn, {
         /*
-         * Returns all siblings elements preceding the current selection that
+         * Returns all sibling elements preceding the current selection that
          * match selector if it's defined or all of them if it isn't, until an
          * element that does not match selector is met.
          */
-        prevUntil: function(selector) {
-            return _until(this, 'prev', selector);
+        prevAll: function(selector) {
+            return _all(this, 'prev', selector);
         },
 
         /*
-         * Returns all siblings elements following the current selection that
+         * Returns all sibling elements following the current selection that
          * match selector if it's defined or all of them if it isn't, until an
          * element that does not match selector is met.
          */
-        nextUntil: function(selector) {
-            return _until(this, 'next', selector);
+        nextAll: function(selector) {
+            return _all(this, 'next', selector);
         }
     });
 }));

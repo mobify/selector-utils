@@ -5,39 +5,62 @@
         factory(window.Zepto || window.jQuery);
     }
 }(function($) {
-    function _until($element, method, selector) {
+    function _all($element, method, until, filter) {
         var $els = $();
-        var $el = $element[method]();
+        var $current = $element;
 
-        while ($el.length) {
-            if (typeof selector === 'undefined' || $el.is(selector)) {
-                $els = $els.add($el);
-                $el = $el[method]();
-            } else {
-                break;
-            }
-        }
+        until = until || [];
+        filter = filter || '';
 
-        return $els;
+        do {
+            $current = $current[method]().not(until);
+            $els = $els.add($current);
+        } while ($current.length);
+
+        return $els.filter(filter);
     }
 
     $.extend($.fn, {
         /*
-         * Returns all siblings elements preceding the current selection that
+         * Returns all sibling elements preceding the current selection that
          * match selector if it's defined or all of them if it isn't, until an
          * element that does not match selector is met.
          */
-        prevUntil: function(selector) {
-            return _until(this, 'prev', selector);
+        prevAll: function(filter) {
+            return _all(this, 'prev', false, filter);
         },
 
         /*
-         * Returns all siblings elements following the current selection that
+         * Returns all sibling elements following the current selection that
          * match selector if it's defined or all of them if it isn't, until an
          * element that does not match selector is met.
          */
-        nextUntil: function(selector) {
-            return _until(this, 'next', selector);
+        nextAll: function(filter) {
+            return _all(this, 'next', false, filter);
+        },
+
+        /*
+         * Returns all sibling elements preceding the current selection that
+         * optionally match 'filter' until an element that matches 'selector' is met,
+         * not including the element matched by 'selector'.
+         *
+         * When 'until' is undefined the return value is identical to 'prevAll'
+         * with an undefined 'selector' argument; 'prevAll' is called instead.
+         */
+        prevUntil: function(until, filter) {
+            return _all(this, 'prev', until, filter);
+        },
+
+        /*
+         * Returns all sibling elements following the current selection that
+         * optionally match 'filter' until an element that matches 'selector' is met,
+         * not including the element matched by 'selector'.
+         *
+         * When 'until' is undefined the return value is identical to 'nextAll'
+         * with an undefined 'selector' argument; 'nextAll' is called instead.
+         */
+        nextUntil: function(until, filter) {
+            return _all(this, 'next', until, filter);
         }
     });
 }));

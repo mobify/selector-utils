@@ -10,7 +10,7 @@
             return this.map(function() {
                 var $el = $(this);
 
-                if ($.trim($el.html().replace(/&nbsp;/g,'')).length) {
+                if (!$.trim($el.html().replace(/&nbsp;|&#160|<br\/?>/g,'')).length) {
                     $el.remove();
                 } else {
                     return $el;

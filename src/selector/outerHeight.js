@@ -17,7 +17,12 @@
             var props = $el.css(['margin-top', 'margin-bottom', 'border-top', 'border-bottom']);
 
             for (var prop in props) {
-                props.hasOwnProperty(prop) && (totalHeight += parseInt(props[prop]));
+                var propertyValue = parseInt(props[prop]);
+
+                // isNaN check is required for Android 4.1.2
+                if (!isNaN(propertyValue)) {
+                    totalHeight += propertyValue;
+                }
             }
 
             return totalHeight;

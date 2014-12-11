@@ -13,21 +13,20 @@
         },
 
         /*
-         * Removes inline styles for all descendants and itself unless specified
-         * otherwise by skipSelf
+         * Removes inline styles for all descendants and itself if specified
          */
-        removeStyles: function(skipSelf) {
+        removeStyles: function(andSelf) {
             return this.each(function() {
                 var $el = $(this);
 
-                if (!skipSelf) {
+                if (andSelf) {
                     $el.removeStyle();
                 }
 
                 $el.find('[style]').removeStyle();
 
                 return $el;
-            })
+            });
         }
     });
 }));

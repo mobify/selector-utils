@@ -10,12 +10,12 @@
          * Removes inline styles for selected element or for all descedants as
          * well if specified
          */
-        removeStyle: function(removeDescedants) {
+        removeStyle: function(andDescendants) {
             return this.each(function() {
                 var $el = $(this);
 
                 $el.removeAttr('style');
-                removeDescedants && $el.find('[style]').removeAttr('style');
+                andDescendants && $el.find('[style]').removeAttr('style');
 
                 return $el;
             });

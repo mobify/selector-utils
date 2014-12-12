@@ -6,9 +6,18 @@
     }
 }(function($) {
     $.extend($.fn, {
-        removeStyle: function() {
+        /*
+         * Removes inline styles for selected element or for all descedants as
+         * well if specified
+         */
+        removeStyle: function(removeDescedants) {
             return this.each(function() {
-                return $(this).removeAttr('style');
+                var $el = $(this);
+
+                $el.removeAttr('style');
+                removeDescedants && $el.find('[style]').removeAttr('style');
+
+                return $el;
             });
         }
     });

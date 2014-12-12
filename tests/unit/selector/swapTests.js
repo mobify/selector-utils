@@ -1,9 +1,10 @@
 define([
     'text!fixtures/swap.html',
     'text!fixtures/swapWithAttributes.html',
+    'text!fixtures/swapWithChildren.html',
     '$',
     'src/selector/swap'
-], function(fixture, fixtureWithAttributes, $) {
+], function(fixture, fixtureWithAttributes, fixtureWithChildren, $) {
     describe('Swap', function() {
         describe('when called with empty selector', function() {
             it('returns empty set', function() {
@@ -32,6 +33,15 @@ define([
                 assert.isTrue(!!$span.attr('data-test'));
                 assert.isTrue($span[0].hasAttribute('hidden'));
                 assert.equal($.trim($span.text()), 'Some content in here!');
+            });
+
+            it('correctly swaps element with children preserving children', function() {
+                var $span = $(fixtureWithChildren).swap('span');
+
+                assert.isTrue($span.is('span'));
+
+                assert.isTrue(!!$span.find('ul').length);
+                assert.equal($span.find('li').length, 5);
             });
         });
     });

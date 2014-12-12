@@ -11,7 +11,8 @@ require(['config'], function() {
                 '../../tests/unit/utils/capitalizeTests.js',
                 '../../tests/unit/utils/anyTests.js',
                 '../../tests/unit/utils/formatTests.js',
-                '../../tests/unit/selector/removeStyleTests.js'
+                '../../tests/unit/selector/removeStyleTests.js',
+                '../../tests/unit/selector/swapTests.js'
             ];
 
             require(tests, function() {

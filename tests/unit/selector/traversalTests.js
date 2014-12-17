@@ -3,7 +3,7 @@ define([
     '$',
     'src/selector/traversals'
 ], function(fixture, $) {
-    describe('traversals', function() {
+    describe('Traversals', function() {
         var $list = $(fixture).filter('.x-links');
 
         var siblingCount = $list.children().length - 1;

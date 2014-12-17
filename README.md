@@ -19,6 +19,10 @@ Selector Extensions
 - `$('.element').removeStyle()`
 - `$('.element').scrollTo(options)`
 - `$('.element').swap()`
+- `$('.element').prevUntil()`
+- `$('.element').nextUntil()`
+- `$('.element').prevAll()`
+- `$('.element').nextAll()`
 
 Static Selector Extensions
 

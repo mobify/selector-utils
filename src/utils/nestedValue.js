@@ -28,9 +28,9 @@
      *
      * result: 'hello world'
      *
-     * @param o
-     * @param propertyChain
-     * @returns current or undefined
+     * @param {Object} o
+     * @param {String} propertyChain
+     * @returns {*}
      */
     $.nestedValue = function(o, propertyChain) {
         var current = o;

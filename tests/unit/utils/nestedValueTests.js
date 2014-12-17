@@ -29,7 +29,8 @@ define([
             });
 
             it('returns undefined if the supplied property list is an empty string', function() {
-                var property = $.nestedvalue(test, '');
+                var test = {};
+                var property = $.nestedValue(test, '');
 
                 assert.isTrue(typeof property === 'undefined');
             });

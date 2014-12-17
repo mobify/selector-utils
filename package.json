@@ -1,5 +1,5 @@
 {
-  "name": "adaptivejs-utils",
+  "name": "selector-utils",
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/mobify/adaptivejs-utils"

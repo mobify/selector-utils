@@ -1,8 +1,8 @@
 define([
     '$',
-    'src/utils/checkProperties'
+    'src/utils/nestedValue'
 ], function($) {
-    describe('checkProperties', function() {
+    describe('nestedValue', function() {
         describe('with a set of supplied properties where one or more property is undefined', function() {
             it('returns undefined if the final supplied property is undefined', function() {
                 var test = {
@@ -10,7 +10,7 @@ define([
                         'level2': 'hello world'
                     }
                 };
-                var property = $.checkProperties(test, 'level1.level2.level3');
+                var property = $.nestedValue(test, 'level1.level2.level3');
 
                 assert.isTrue(typeof property === 'undefined');
             });
@@ -23,7 +23,13 @@ define([
                         }
                     }
                 };
-                var property = $.checkProperties(test, 'level1.woops.level3');
+                var property = $.nestedValue(test, 'level1.woops.level3');
+
+                assert.isTrue(typeof property === 'undefined');
+            });
+
+            it('returns undefined if the supplied property list is an empty string', function() {
+                var property = $.nestedvalue(test, '');
 
                 assert.isTrue(typeof property === 'undefined');
             });
@@ -38,7 +44,7 @@ define([
                         }
                     }
                 };
-                var property = $.checkProperties(test, 'level1.level2.level3');
+                var property = $.nestedValue(test, 'level1.level2.level3');
 
                 assert.isTrue(property === 'hello world');
             });

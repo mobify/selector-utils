@@ -5,7 +5,7 @@
         factory(window.Zepto || window.jQuery);
     }
 }(function($) {
-    /**
+    /*
      * Checks whether a set of nested properties exist within a given object, preserving case.
      * The list of properties to check is supplied as a string, separated by periods.
      * The first parameter is reserved for the object whose properties are being checked.
@@ -24,24 +24,28 @@
      *      }
      * };
      *
-     * $.checkProperties(someObject, 'first.second.third.property');
+     * $.nestedValue(someObject, 'first.second.third.property');
      *
      * result: 'hello world'
      *
-     * @param object
+     * @param o
      * @param propertyChain
-     * @returns {object} or undefined
+     * @returns current or undefined
      */
-    $.checkProperties = function(object, propertyChain) {
-        var args = propertyChain.split('.');
+    $.nestedValue = function(o, propertyChain) {
+        var current = o;
+        var keys = propertyChain.split('.');
 
-        for (var i = 0; i < args.length; i++) {
-            if (!object.hasOwnProperty(args[i])) {
-                return object[args[i]];
+        var i = 0;
+
+        while (i < keys.length) {
+            if (!current.hasOwnProperty(keys[i])) {
+                return undefined;
             }
-            object = object[args[i]];
+
+            current = current[keys[i++]];
         }
 
-        return object;
+        return current;
     };
 }));

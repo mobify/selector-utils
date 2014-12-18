@@ -12,7 +12,10 @@ require(['config'], function() {
                 '../../tests/unit/utils/anyTests.js',
                 '../../tests/unit/utils/formatTests.js',
                 '../../tests/unit/utils/nestedValueTests.js',
-                '../../tests/unit/selector/removeStyleTests.js'
+                '../../tests/unit/selector/removeStyleTests.js',
+                '../../tests/unit/selector/removeEmptyTests.js',
+                '../../tests/unit/selector/swapTests.js',
+                '../../tests/unit/selector/traversalTests.js'
             ];
 
             require(tests, function() {

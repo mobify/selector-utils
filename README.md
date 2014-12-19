@@ -12,6 +12,7 @@ String Utilities
 - `$.any`
 - `$.capitalize`
 - `$.format`
+- `$.nestedValue`
 
 Selector Extensions
 

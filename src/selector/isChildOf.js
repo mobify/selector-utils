@@ -7,7 +7,7 @@
 }(function($) {
     $.extend($.fn, {
         isChildOf: function(selector) {
-            return (selector) ? $(this).parents().filter(selector).length > 0 : false;
+            return selector ? !!$(this).parents(selector).length : false;
         }
     });
 }));

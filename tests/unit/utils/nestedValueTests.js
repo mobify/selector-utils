@@ -2,7 +2,7 @@ define([
     '$',
     'src/utils/nestedValue'
 ], function($) {
-    describe('nestedValue', function() {
+    describe('Nested Value', function() {
         describe('with a set of supplied properties where one or more property is undefined', function() {
             it('returns undefined if the final supplied property is undefined', function() {
                 var test = {

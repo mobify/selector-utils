@@ -20,8 +20,9 @@ Selector Extensions
 - `$('.element').removeStyle()`
 - `$('.element').scrollTo(options)`
 - `$('.element').swap()`
-- `$('.element').prevUntil()`
-- `$('.element').nextUntil()`
+- `$('.element').isChildOf(selector)`
+- `$('.element').prevUntil(selector)`
+- `$('.element').nextUntil(selector)`
 - `$('.element').prevAll()`
 - `$('.element').nextAll()`
 

@@ -12,6 +12,14 @@ define([
         $target = $target || $('body');
         options = options || {};
 
+        if (options.container) {
+            var $container = $(options.container);
+            if ($container.css('position') === 'static') {
+                $container.css('position', 'relative');
+                console.warn('$.scrollTo: the given container must not use position:static, so we made it position:relative');
+            }
+        }
+
         Velocity.animate($target, 'scroll', options);
 
         return $target;

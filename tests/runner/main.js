@@ -16,7 +16,8 @@ require(['config'], function() {
                 '../../tests/unit/selector/removeEmptyTests.js',
                 '../../tests/unit/selector/swapTests.js',
                 '../../tests/unit/selector/traversalTests.js',
-                '../../tests/unit/selector/isChildOfTests.js'
+                '../../tests/unit/selector/isChildOfTests.js',
+                '../../tests/unit/selector/unwrapTables.js',
             ];
 
             require(tests, function() {

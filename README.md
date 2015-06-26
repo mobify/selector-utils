@@ -25,6 +25,7 @@ Selector Extensions
 - `$('.element').nextUntil(selector)`
 - `$('.element').prevAll()`
 - `$('.element').nextAll()`
+- `$('.element').unwrapTables()`
 
 Static Selector Extensions
 

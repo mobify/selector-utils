@@ -1,10 +1,10 @@
 {
-  "name": "adaptivejs-utils",
+  "name": "selector-utils",
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/mobify/adaptivejs-utils"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Utility functions that can be selectively included in your Adaptive.js builds",
   "devDependencies": {
     "chai": "~1.9.0",

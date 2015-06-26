@@ -17,16 +17,16 @@ define([
         });
     });
 
-    describe('Remove styles', function() {
+    describe('Remove style with descendants', function() {
         describe('attributes with invalid input', function() {
             it('returns empty when passed empty', function() {
-                assert.equal($('').removeStyles().filter('[style]').length, 0);
+                assert.equal($('').removeStyle(true).filter('[style]').length, 0);
             });
         });
 
         describe('attributes with valid input', function() {
             it('correctly empties a list with only styled elements', function() {
-                assert.equal($(fixture).filter('.has-style-container').removeStyles().filter('[style]').length, 0);
+                assert.equal($(fixture).filter('.has-style-container').removeStyle(true).filter('[style]').length, 0);
             });
         });
     });

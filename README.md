@@ -9,12 +9,23 @@ Selector utility functions that can be selectively included in your Adaptive.js 
 
 String Utilities
 
+- `$.any`
 - `$.capitalize`
+- `$.format`
+- `$.nestedValue`
 
 Selector Extensions
 
+- `$('.element').removeEmpty()`
 - `$('.element').removeStyle()`
 - `$('.element').scrollTo(options)`
+- `$('.element').swap()`
+- `$('.element').isChildOf(selector)`
+- `$('.element').prevUntil(selector)`
+- `$('.element').nextUntil(selector)`
+- `$('.element').prevAll()`
+- `$('.element').nextAll()`
+- `$('.element').unwrapTables()`
 
 Static Selector Extensions
 

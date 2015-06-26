@@ -15,7 +15,7 @@
                 var $swap = $('<' + tag + '>').html($el.html());
                 var attributes = $el.prop('attributes');
 
-                // // Copy all attributes
+                // Copy all attributes
                 $.each(attributes, function() {
                     $swap.attr(this.name, this.value);
                 });

@@ -12,7 +12,7 @@ define([
 
         describe('attributes with valid input', function() {
             it('correctly empties empty elements', function() {
-                assert.equal($(fixture).removeStyle().filter('.is-empty').length, 0);
+                assert.equal($(fixture).removeEmpty().filter('.is-empty').length, 0);
             });
         });
     });

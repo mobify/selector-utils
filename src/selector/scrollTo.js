@@ -16,6 +16,7 @@ define([
 
         // We need a plain DOM element for Velocity.animate when scrolling
         // within a container
+        // http://julian.com/research/velocity/#scroll
         container = options.container && $(options.container).get(0);
 
         if (container) {

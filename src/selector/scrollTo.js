@@ -9,8 +9,23 @@ define([
      * @returns {*|Zepto|jQuery}
      */
     $.scrollTo = function($target, options) {
+        var container;
+        var position;
         $target = $target || $('body');
         options = options || {};
+
+        // We need a plain DOM element for Velocity.animate when scrolling
+        // within a container
+        // http://julian.com/research/velocity/#scroll
+        container = options.container && $(options.container).get(0);
+
+        if (container) {
+            position = window.getComputedStyle(container).position;
+
+            if (!position || position === 'static') {
+                throw container + ' needs to have a non-static position property';
+            }
+        }
 
         Velocity.animate($target, 'scroll', options);
 
@@ -24,12 +39,6 @@ define([
      */
     $.fn.scrollTo = function(options) {
         return this.each(function() {
-            /**
-             * Ensure that the container is a plain DOM object, as that's what
-             * Velocity requires for non-jQuery environments
-             */
-            options.container && options.container.length && (options.container = $(options.container)[0]);
-
             return $.scrollTo($(this), options);
         });
     };

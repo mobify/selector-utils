@@ -9,24 +9,20 @@ define([
      * @returns {*|Zepto|jQuery}
      */
     $.scrollTo = function($target, options) {
+        var container;
+        var position;
         $target = $target || $('body');
         options = options || {};
 
-        if (options.container) {
-            var $container = $(options.container).first();
-            var container = $container[0];
+        // We need a plain DOM element for Velocity.animate when scrolling
+        // within a container
+        container = options.container && $(options.container).get(0);
 
-            // Ensure that the container is a plain DOM object, as that's what
-            // Velocity requires for non-jQuery environments
-            options.container = container;
+        if (container) {
+            position = window.getComputedStyle(container).position;
 
-            if ($container.css('position') === 'static') {
-                $container.css('position', 'relative');
-
-                console.warn('$.scrollTo: the given container must not use position:static, so we made it position:relative');
-                // From Velocity's doc:
-                // "The container element must have its CSS position property 
-                // set to either relative, absolute, or fixed — static will not work"
+            if (!position || position === 'static') {
+                throw container + ' needs to have a non-static position property';
             }
         }
 

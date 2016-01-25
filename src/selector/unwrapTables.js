@@ -4,7 +4,7 @@
     } else {
         factory(window.Zepto || window.jQuery);
     }
-}(function($) {
+})(function($) {
     $.extend($.fn, {
         /*
          * Unwrap tables and replace container with <tag>
@@ -43,4 +43,4 @@
             });
         }
     });
-}));
+});

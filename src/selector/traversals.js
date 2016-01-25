@@ -4,8 +4,8 @@
     } else {
         factory(window.Zepto || window.jQuery);
     }
-}(function($) {
-    function _all($element, method, until, filter) {
+})(function($) {
+    var _all = function($element, method, until, filter) {
         var $els = $();
         var $current = $element;
 
@@ -18,7 +18,7 @@
         } while ($current.length);
 
         return $els.filter(filter);
-    }
+    };
 
     $.extend($.fn, {
         /*
@@ -63,4 +63,4 @@
             return _all(this, 'next', until, filter);
         }
     });
-}));
+});

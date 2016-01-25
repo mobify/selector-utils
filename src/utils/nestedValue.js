@@ -4,7 +4,7 @@
     } else {
         factory(window.Zepto || window.jQuery);
     }
-}(function($) {
+})(function($) {
     /*
      * Checks whether a set of nested properties exist within a given object, preserving case.
      * The list of properties to check is supplied as a string, separated by periods.
@@ -48,4 +48,4 @@
 
         return current;
     };
-}));
+});

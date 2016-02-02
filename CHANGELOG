@@ -1,0 +1,8 @@
+Pending Release
+    - Update depenedencies to current Mobify standards
+    - Update linting to current Mobify standards
+1.1.0
+    - Add `$('.element').isChildOf(selector)`
+    - Add `$.nestedValue`
+1.0.0
+    - Initial release

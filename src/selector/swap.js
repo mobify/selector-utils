@@ -4,7 +4,7 @@
     } else {
         factory(window.Zepto || window.jQuery);
     }
-}(function($) {
+})(function($) {
     $.extend($.fn, {
         /*
          * Swaps the selected elements with <tag>
@@ -30,4 +30,4 @@
             });
         }
     });
-}));
+});

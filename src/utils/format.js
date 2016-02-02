@@ -4,7 +4,7 @@
     } else {
         factory(window.Zepto || window.jQuery);
     }
-}(function($) {
+})(function($) {
     /**
      * Formats a string using index positional syntax. Takes a variable number of replacements.
      *
@@ -17,7 +17,7 @@
      * @param format
      * @returns {*}
      */
-    $.format = function (format) {
+    $.format = function(format) {
         if (!format) return '';
 
         var args = Array.prototype.slice.call(arguments, 1);
@@ -38,6 +38,4 @@
 
         return format;
     };
-}));
-
-
+});

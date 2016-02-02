@@ -4,7 +4,7 @@
     } else {
         factory(window.Zepto || window.jQuery);
     }
-}(function($) {
+})(function($) {
     /**
      * Capitalizes single or multiple words. By default, it preserves
      * the case of any subsequent letters after the first. This behavior
@@ -18,4 +18,4 @@
             return a.toUpperCase();
         }) : '';
     };
-}));
+});

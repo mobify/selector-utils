@@ -4,10 +4,10 @@
     } else {
         factory(window.Zepto || window.jQuery);
     }
-}(function($) {
+})(function($) {
     $.extend($.fn, {
         isChildOf: function(selector) {
             return selector ? !!$(this).parents(selector).length : false;
         }
     });
-}));
+});

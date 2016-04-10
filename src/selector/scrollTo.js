@@ -6,7 +6,7 @@ define([
      * Smooth scrolls an element
      * @param $target - the target element to animate to
      * @param options - includes any valid options Velocity accepts. Please see http://julian.com/research/velocity/#scroll
-     * @returns {*|Zepto|jQuery}
+     * @returns {*|jQuery}
      */
     $.scrollTo = function($target, options) {
         var container;
@@ -35,7 +35,7 @@ define([
     /**
      * Smooth scrolls to a selected element
      * @param options - includes any valid options Velocity accepts. Please see http://julian.com/research/velocity/#scroll
-     * @returns {*|Zepto|jQuery}
+     * @returns {*|jQuery}
      */
     $.fn.scrollTo = function(options) {
         return this.each(function() {

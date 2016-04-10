@@ -10,7 +10,7 @@
         var $current = $element;
 
         until = until || [];
-        filter = filter || '';
+        filter = filter || '*';
 
         do {
             $current = $current[method]().not(until);

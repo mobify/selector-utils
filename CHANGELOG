@@ -1,6 +1,10 @@
-Pending Release
-    - Update depenedencies to current Mobify standards
+2.0.0
+    - Publish to NPM
+    - Migrate Zepto to jQuery
+    - Update dependencies to current Mobify standards
     - Update linting to current Mobify standards
+    - Update CircleCI config
+    - Add some GitHub templates for contributing, issues, and PRs
 1.1.0
     - Add `$('.element').isChildOf(selector)`
     - Add `$.nestedValue`

@@ -2,7 +2,7 @@
     if (typeof define === 'function' && define.amd) {
         define(['$'], factory);
     } else {
-        factory(window.Zepto || window.jQuery);
+        factory(window.jQuery);
     }
 })(function($) {
     $.extend($.fn, {

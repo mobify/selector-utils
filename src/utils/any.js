@@ -2,9 +2,9 @@
     if (typeof define === 'function' && define.amd) {
         define(['$'], factory);
     } else {
-        factory(window.Zepto || window.jQuery);
+        factory(window.jQuery);
     }
-}(function($) {
+})(function($) {
     /**
      * Checks whether a string exists within a list of other strings, preserving case. The
      * list of strings can be supplied as subsequent parameters to $.any. The first parameter
@@ -34,4 +34,4 @@
 
         return false;
     };
-}));
+});

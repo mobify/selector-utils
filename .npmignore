@@ -1,0 +1,4 @@
+# Ref https://docs.npmjs.com/misc/developers
+tasks/
+tests/
+.github/

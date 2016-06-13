@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var path = require('path');
 
@@ -28,9 +28,11 @@ module.exports = function(grunt) {
 
     // load npm tasks
     var npmTasks = [
-        'grunt-contrib-watch',
+        'grunt-concurrent',
         'grunt-contrib-connect',
-        'grunt-mocha-phantomjs'
+        'grunt-contrib-watch',
+        'grunt-mocha-phantomjs',
+        'grunt-open'
     ];
 
     npmTasks.forEach(function(taskName) {
@@ -42,6 +44,6 @@ module.exports = function(grunt) {
     grunt.registerTask('serve', ['build', 'connect:server', 'watch']);
     grunt.registerTask('build', ['lint:dev']);
     grunt.registerTask('test', ['build', 'connect:test', 'mocha_phantomjs']);
-    grunt.registerTask('test:browser', ['build', 'connect:test:keepalive']);
+    grunt.registerTask('test:browser', ['build', 'concurrent:tests']);
     grunt.registerTask('default', 'build');
 };

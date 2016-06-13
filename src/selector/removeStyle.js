@@ -2,9 +2,9 @@
     if (typeof define === 'function' && define.amd) {
         define(['$'], factory);
     } else {
-        factory(window.Zepto || window.jQuery);
+        factory(window.jQuery);
     }
-}(function($) {
+})(function($) {
     $.extend($.fn, {
         /*
          * Removes inline styles for selected element or for all descedants as
@@ -21,4 +21,4 @@
             });
         }
     });
-}));
+});

@@ -2,15 +2,15 @@
     if (typeof define === 'function' && define.amd) {
         define(['$'], factory);
     } else {
-        factory(window.Zepto || window.jQuery);
+        factory(window.jQuery);
     }
-}(function($) {
-    function _all($element, method, until, filter) {
+})(function($) {
+    var _all = function($element, method, until, filter) {
         var $els = $();
         var $current = $element;
 
         until = until || [];
-        filter = filter || '';
+        filter = filter || '*';
 
         do {
             $current = $current[method]().not(until);
@@ -18,7 +18,7 @@
         } while ($current.length);
 
         return $els.filter(filter);
-    }
+    };
 
     $.extend($.fn, {
         /*
@@ -63,4 +63,4 @@
             return _all(this, 'next', until, filter);
         }
     });
-}));
+});

@@ -2,16 +2,18 @@
     if (typeof define === 'function' && define.amd) {
         define(['$'], factory);
     } else {
-        factory(window.Zepto || window.jQuery);
+        factory(window.jQuery);
     }
-}(function($) {
+})(function($) {
     $.extend($.fn, {
         /*
          * Swaps the selected elements with <tag>
          */
         swap: function(tag) {
-            return this.map(function() {
-                var $el = $(this);
+            var $swapped = $('');
+            // Change from .map to .each which builds a $swapped jQuery collection
+            this.each(function(i, el) {
+                var $el = $(el);
                 var $swap = $('<' + tag + '>').html($el.html());
                 var attributes = $el.prop('attributes');
 
@@ -26,8 +28,9 @@
                     $el.replaceWith($swap);
                 }
 
-                return $swap;
+                $swapped = $swapped.add($swap);
             });
+            return $swapped;
         }
     });
-}));
+});
